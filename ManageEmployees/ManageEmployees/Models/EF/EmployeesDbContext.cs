@@ -13,6 +13,7 @@ namespace ManageEmployees.Models.EF
         public EmployeesDbContext(DbContextOptions options) : base(options) { }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.ApplyConfiguration ( new EmployeesConfiguration());
             modelBuilder.Seed();
         }
         public DbSet<Employees> Employees{ get; set; }
